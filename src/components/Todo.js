@@ -19,9 +19,6 @@ import useStorage from "../hooks/storage";
 import { getKey } from "../lib/util";
 
 function Todo() {
-  import { getKey } from "../lib/util";
-
-function Todo() {
   const [items, putItems, clearItems] = useStorage();
 
   const [filter, setFilter] = React.useState("ALL");
