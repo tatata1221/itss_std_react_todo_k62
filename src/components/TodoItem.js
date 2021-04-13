@@ -4,17 +4,18 @@
 　・チェックボックスにチェックが入っているか管理する
 　・チェックボックスにチェックが入っているかアイテムをグレーアウトする
 */
+
+import React from "react";
+
 function TodoItem({ item, onCheck }) {
-  const EventSTT = () => {
+  const handleChange = () => {
     onCheck(item);
-  }
-  
+  };
+
   return (
     <label className="panel-block">
-       <input type="checkbox" checked={item.done} onChange={EventSTT}/>
-       <span className={item.done ? 'has-text-grey-light' : ''}>
-            {item.text}
-        </span>
+      <input type="checkbox" onChange={handleChange} checked={item.done} />
+      <div className={item.done ? "has-text-grey-light" : ""}>{item.text}</div>
     </label>
   );
 }
